@@ -1,0 +1,14 @@
+{
+    "title": "Timeline",
+    "company": "Company: ",
+    "customer": "Customer: ",
+    "link": "Link",
+    "tech": "Technologies:",
+    "description": "Description:",
+    "sideProject": "Side Project",
+    "customerProject": "Customer Project",
+    "certificate": "Certificate",
+    "apprenticeship": "Apprenticeship",
+    "confirmation": "Confirmation",
+    "confirmationLink": "Confirmation Link"
+}

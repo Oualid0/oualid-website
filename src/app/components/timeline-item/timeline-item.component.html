@@ -1,0 +1,124 @@
+<li class="ms-4">
+    <!--IF DATA EXITS-->
+    <div *ngIf="data">
+
+        <!-- POINT -->
+        <div
+            class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700">
+        </div>
+
+        <!-- YEAR -->
+        <time class="mb-1 text-xl font-semibold leading-none text-gray-600 dark:text-gray-400 font-seg">{{data.year}}</time>
+
+        <!-- Container with Relative Positioning -->
+        <div class="relative m-2 mt-6">
+
+            <!-- TAG with Absolute Positioning -->
+            <container-element [ngSwitch]="data.type">
+                <div *ngSwitchCase="'CustomerProject'">
+                    <div
+                        class="absolute top-0 right-0 bg-yellow-500 text-sm text-black font-bold w-fit px-2 h-6 text-center rounded-md z-10 transform -translate-x-6 -translate-y-1/2">
+                        {{text['customerProject']}}
+                    </div>
+                </div>
+
+                <div *ngSwitchCase="'SideProject'">
+                    <div
+                        class="absolute top-0 right-0 bg-cyan-500 text-sm text-black font-bold w-fit px-2 h-6 text-center rounded-md z-10 transform -translate-x-6 -translate-y-1/2">
+                        {{text['sideProject']}}
+                    </div>
+                </div>
+
+                <div *ngSwitchCase="'Certificate'">
+                    <div
+                        class="absolute top-0 right-0 bg-cyan-500 text-sm text-black font-bold w-fit px-2 h-6 text-center rounded-md z-10 transform -translate-x-6 -translate-y-1/2">
+                        {{text['certificate']}}
+                    </div>
+                </div>
+
+                <div *ngSwitchCase="'Apprenticeship'">
+                    <div
+                        class="absolute top-0 right-0 bg-cyan-500 text-sm text-black font-bold w-fit px-2 h-6 text-center rounded-md z-10 transform -translate-x-6 -translate-y-1/2">
+                        {{text['apprenticeship']}}
+                    </div>
+                </div>
+            </container-element>
+
+
+
+            <!-- BOX -->
+            <div class="m-2 p-3 rounded-md bg-gray-200 dark:bg-gray-900">
+                <!-- NAME -->
+                <h3 class="text-cyan-500 text-xl font-semibold">{{data.name}}</h3>
+
+                <br>
+
+                <!-- COMPANY -->
+                <div class="flex" *ngIf="data.company">
+                    <p class="dark:text-white text-md font-semibold">{{text['company']}}</p>
+                    <p class="dark:text-white text-md ml-2">
+                        {{data.company}}</p>
+                </div>
+
+                <!-- COMPANY -->
+                <div class="flex" *ngIf="data.customer">
+                    <p class="dark:text-white text-md font-semibold">{{text['customer']}}</p>
+                    <p class="dark:text-white text-md ml-2">
+                        {{data.customer}}</p>
+                </div>
+
+                <!-- Link -->
+                <div *ngIf="data.link">
+                    <p class="dark:text-white text-md font-semibold">{{text['link']}}: <a class="underline text-blue-400 hover:text-blue-300"
+                            target="_blank" href={{data.link}}>{{data.linkName}}</a></p>
+                </div>
+
+
+                <!-- DESCRIPTION -->
+                <div *ngIf="data.shortDescription" class="font-seg">
+                    <br>
+                    <p class="dark:text-white text-md font-semibold">{{text['description']}}</p>
+                    <div class="dark:text-white mt-2 ml-5 md:text-lg rounded-md">
+                        <div class="flex justify-between items-center">
+                            <p class="flex-grow w-11/12">{{data.shortDescription}}</p>
+                            <div class="ml-2 w-8 h-8 p-1 z-90" *ngIf="data.fullDescription">
+                                <button *ngIf="!isExpanded" (click)="isExpanded = !isExpanded">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor" class="w-full h-full">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                            d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </button>
+
+                                <button *ngIf="isExpanded" (click)="isExpanded = !isExpanded">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor" class="w-full h-full">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                            d="M5 15l7-7 7 7" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Full Description -->
+                        <div *ngIf="data.fullDescription">
+                            <hr *ngIf="isExpanded" class="mt-5 w-3/5 mx-auto h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent 
+                            via-neutral-500 to-transparent opacity-25 dark:opacity-100" />
+                            <p *ngIf="isExpanded" class="line-breaks">
+    
+                                <br>
+                                {{data.fullDescription}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!--IF DATA DOES NOT EXITS-->
+    <div *ngIf="!data">
+        <h1 class="text-red-500">PROJECT DATA IS MISSING!</h1>
+    </div>
+</li>

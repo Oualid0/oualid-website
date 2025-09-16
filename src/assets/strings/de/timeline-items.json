@@ -1,0 +1,57 @@
+[
+    {
+        "type": "Apprenticeship",
+        "year": "2018/09 - 2021/09 [3 JAHRE]",
+        "name": "Ausbildung bei Randstad Digital",
+        "shortDescription": "Während meiner 3-jährigen Ausbildung eignete ich mir umfassende Kenntnisse in der Entwicklung von Java-Backends und Angular-Frontends an.",
+        "fullDescription": null,
+        "link": "https://www.randstaddigital.de/",
+        "linkName": "Randstad Digital Website",
+        "company": "Randstad Digital",
+        "customer": null
+    },
+    {
+        "type": "CustomerProject",
+        "year": "2021/09 - 2025/01 [3 JAHRE]",
+        "name": "Erstes Kundenprojekt",
+        "shortDescription": "Im Rahmen meiner 3-jährigen Tätigkeit am Kundenprojekt lag mein Fokus auf der Backend-Entwicklung. Darüber hinaus konnte ich wertvolle Erfahrungen im Frontend- und AWS-Bereich sammeln.",
+        "fullDescription": null,
+        "link": null,
+        "linkName": null,
+        "company": "Randstad Digital",
+        "customer": null
+    },
+    {
+        "type": "Certificate",
+        "year": "2023/06",
+        "name": "AWS Zertifikat: Cloud Practitioner",
+        "shortDescription": "Der Erwerb des Zertifikats AWS Certified Cloud Practitioner belegt meine fundierten Kenntnisse der AWS-Dienste.",
+        "fullDescription": null,
+        "link": "https://www.credly.com/badges/138a2fcf-2adb-4ecd-8cca-d7a5e91c91d5",
+        "linkName": "AWS Zertifikat Nachweis",
+        "company": null,
+        "customer": null
+    },
+    {
+        "type": "SideProject",
+        "year": "2024/01",
+        "name": "Persönliche Webseite",
+        "shortDescription": "Mittels Angular entwickelte ich meine persönliche Website, um meine Projekte und mein berufliches Profil ansprechend zu präsentieren.",
+        "fullDescription": "Diese persönliche Website nutzt Angular 17, Tailwind CSS und Vercel, um ein umfassendes Projektportfolio zu erstellen.\n\nDurch dieses Projekt habe ich meine Fähigkeiten in der Front-End-Entwicklung erweitert und mein Verständnis für moderne Webentwicklungsverfahren vertieft.",
+        "link": "https://gitlab.com/oualid20/OualidWebsite#",
+        "linkName": "Gitlab Repository (Open Source)",
+        "company": null,
+        "customer": null
+    },
+    {
+        "type": "CustomerProject",
+        "year": "2025/06 - Fortlaufend",
+        "name": "Zweites Kundenprojekt",
+        "shortDescription": "Kundenprojekt mit Fokus auf Frontend-Entwicklung.",
+        "fullDescription": null,
+        "link": null,
+        "linkName": null,
+        "company": "Randstad Digital",
+        "customer": null
+    }
+]

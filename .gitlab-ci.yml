@@ -1,0 +1,49 @@
+image: node:lts
+
+pages:
+  stage: deploy
+  
+  cache:
+    paths:
+    - node_modules/
+
+  script:
+    - echo "----- ----- [1/4] - Installing dependencies ----- -----"
+    - npm install
+
+    - echo "----- ----- [2/4] - Installing Angular CLI globally ----- -----"
+    - npm install -g @angular/cli
+
+    - echo "----- ----- [3/4] - Building the Angular application ----- -----"
+    - ng build --configuration production
+
+    - echo "----- ----- [4/4] - Preparing for GitLab Pages deployment ----- -----"
+    - mkdir public
+    - mv dist/oualid-o-website/browser/* public
+
+    - echo "----- ----- 'pages' finished! ----- -----"
+
+  artifacts:
+    paths:
+      - public
+
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+
+lint:
+  stage: deploy
+
+  script:
+    - echo "----- ----- [1/1] - Installing dependencies ----- -----"
+    - npm install
+
+    - echo "----- ----- [2/3] - Installing Angular CLI globally ----- -----"
+    - npm install -g @angular/cli
+
+    - echo "----- ----- [3/3] - Running linting ----- -----"
+    - ng lint
+
+    - echo "----- ----- 'lint' finished! ----- -----"
+
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'

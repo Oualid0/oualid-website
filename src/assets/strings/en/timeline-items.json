@@ -1,0 +1,57 @@
+[
+    {
+        "type": "Apprenticeship",
+        "year": "2018/09 - 2021/09 [3 YEARS]",
+        "name": "Apprenticeship at Randstad Digital",
+        "shortDescription": "Completed a 3-year apprenticeship, mastering Java backend and Angular frontend development.",
+        "fullDescription": null,
+        "link": "https://www.randstaddigital.de/",
+        "linkName": "Randstad Digital homepage",
+        "company": "Randstad Digital",
+        "customer": null
+    },
+    {
+        "type": "CustomerProject",
+        "year": "2021/09 - 2025/01 [3 YEARS]",
+        "name": "First Customer Project",
+        "shortDescription": "Focused on backend development for the project over 3 years, gaining additional frontend and AWS experience.",
+        "fullDescription": null,
+        "link": null,
+        "linkName": null,
+        "company": "Randstad Digital",
+        "customer": null
+    },
+    {
+        "type": "Certificate",
+        "year": "2023/06",
+        "name": "AWS Certified: Cloud Practitioner",
+        "shortDescription": "Earned the AWS Certified Cloud Practitioner credential, demonstrating foundational knowledge of AWS services.",
+        "fullDescription": null,
+        "link": "https://www.credly.com/badges/138a2fcf-2adb-4ecd-8cca-d7a5e91c91d5",
+        "linkName": "Certificate confirmation",
+        "company": null,
+        "customer": null
+    },
+    {
+        "type": "SideProject",
+        "year": "2024/01",
+        "name": "Personal website",
+        "shortDescription": "Developed a personal website using Angular to showcase projects and professional profile.",
+        "fullDescription": "This personal website utilizes Angular 17, Tailwind CSS, and Vercel to deliver a comprehensive project portfolio. \nThrough this project, I advanced my front-end development capabilities and deepened my understanding of contemporary web development practices.",
+        "link": "https://gitlab.com/oualid20/OualidWebsite#",
+        "linkName": "Gitlab Repository (Open Source)",
+        "company": null,
+        "customer": null
+    },
+    {
+        "type": "CustomerProject",
+        "year": "2025/06 - Ongoing",
+        "name": "Second Customer Project",
+        "shortDescription": "Project focused on frontend development.",
+        "fullDescription": null,
+        "link": null,
+        "linkName": null,
+        "company": "Randstad Digital",
+        "customer": null
+    }
+]
