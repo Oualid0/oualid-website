@@ -1,12 +1,8 @@
-<div class="mt-10 app-project-animation" id="project">
-    <h2 class="dark:text-white text-2xl sm:text-3xl font-bold mb-5 font-cons">{{text['title']}}</h2>
-    <div class="timeline">
-        <ol class="relative border-s border-gray-200 dark:border-gray-700">
-
-            <div *ngFor="let data of timelineItems">
-                <app-timeline-item [data]="data"></app-timeline-item>
-                <div class="h-12"></div>
-            </div>
-        </ol>
-    </div>
+<div class="app-project-animation" id="project">
+    <app-section-title [label]="title()"></app-section-title>
+    <ol class="relative border-s border-outline-variant flex flex-col gap-10">
+        <div *ngFor="let data of timelineItems()">
+            <app-timeline-item [data]="data"></app-timeline-item>
+        </div>
+    </ol>
 </div>

@@ -1,29 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 
 import textEn from '../../../assets/strings/en/technology.json';
 import textDe from '../../../assets/strings/de/technology.json';
-import { SettingsService } from '../../service/settings.service';
-import { TextDataInterface } from '../../models/interface/text-data-interface';
+import { SettingsStore } from '../../service/settings.store';
 import { CommonModule } from '@angular/common';
+import { SectionTitleComponent } from '../../components/section-title/section-title.component';
 
 @Component({
     selector: 'app-technologies',
-    imports: [CommonModule],
+    imports: [CommonModule, SectionTitleComponent],
     templateUrl: './technologies.component.html',
-    styleUrl: './technologies.component.scss'
 })
-export class TechnologiesComponent implements OnInit {
-  text: TextDataInterface = {};
-  technologies: string[] = []
+export class TechnologiesComponent {
+  private settingsStore = inject(SettingsStore);
 
-  constructor(private settingsService: SettingsService) {}
-
-  ngOnInit(): void {
-    this.settingsService.getLanguage().subscribe({
-      next: value => {
-        this.text = (value == "EN" ? textEn : textDe);
-        this.technologies = textEn["tech"]
-      }
-    });
-  }
+  private data = computed(() => (this.settingsStore.language() === 'EN' ? textEn : textDe));
+  title = computed(() => this.data().title);
+  technologies = computed(() => this.data().tech);
 }

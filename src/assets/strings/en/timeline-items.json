@@ -1,57 +1,72 @@
 [
     {
         "type": "Apprenticeship",
-        "year": "2018/09 - 2021/09 [3 YEARS]",
+        "dateStart": "2018.09",
+        "dateEnd": "2021.09",
+        "ongoing": false,
         "name": "Apprenticeship at Randstad Digital",
-        "shortDescription": "Completed a 3-year apprenticeship, mastering Java backend and Angular frontend development.",
+        "shortDescription": "Completed a 3-year apprenticeship in Bavaria, mastering Java backend and Angular frontend development.",
         "fullDescription": null,
         "link": "https://www.randstaddigital.de/",
         "linkName": "Randstad Digital homepage",
         "company": "Randstad Digital",
-        "customer": null
+        "customer": null,
+        "tech": ["Java", "Angular"]
     },
     {
         "type": "CustomerProject",
-        "year": "2021/09 - 2025/01 [3 YEARS]",
-        "name": "First Customer Project",
-        "shortDescription": "Focused on backend development for the project over 3 years, gaining additional frontend and AWS experience.",
-        "fullDescription": null,
+        "dateStart": "2021.09",
+        "dateEnd": "2025.01",
+        "ongoing": false,
+        "name": "Customer Project – Automotive",
+        "shortDescription": "Backend-focused role on a large automotive project over more than three years — from on-premise operation through migration to the AWS cloud to running it on AWS, with additional frontend work.",
+        "fullDescription": "The system calculates precise CO2 and emission values for vehicles based on specific parameters. A central data service makes these results available to other systems in a uniform way, while a dedicated monitoring and reporting module generates standard-compliant vehicle documents.\n\nMy focus was on backend development, complemented by frontend and cloud work:\n• Developed Java backend features (main focus)\n• Defined and connected interfaces with OpenAPI\n• Modelled and processed data in an Oracle database\n• Took on Angular frontend tasks\n• Operated and extended the application on-premise at first\n• Supported the migration of the application to the AWS cloud\n• Deployed features on AWS and ran them with the operating team\n• Built custom monitoring dashboards (CloudWatch)\n• Analysed and fixed bugs to improve system stability\n• Provided 2nd- and 3rd-level support for complex issues",
         "link": null,
         "linkName": null,
         "company": "Randstad Digital",
-        "customer": null
+        "customer": null,
+        "tech": ["Java 17", "Java EE", "Gradle", "Angular", "OpenAPI", "AWS", "AWS CloudWatch", "Docker", "Oracle SQL", "Log4j", "GitLab"]
     },
     {
         "type": "Certificate",
-        "year": "2023/06",
+        "dateStart": "2023.06",
+        "dateEnd": null,
+        "ongoing": false,
         "name": "AWS Certified: Cloud Practitioner",
         "shortDescription": "Earned the AWS Certified Cloud Practitioner credential, demonstrating foundational knowledge of AWS services.",
         "fullDescription": null,
         "link": "https://www.credly.com/badges/138a2fcf-2adb-4ecd-8cca-d7a5e91c91d5",
         "linkName": "Certificate confirmation",
         "company": null,
-        "customer": null
+        "customer": null,
+        "tech": ["AWS", "Amazon EC2", "Amazon S3", "IAM", "Amazon RDS", "AWS CloudWatch"]
     },
     {
         "type": "SideProject",
-        "year": "2024/01",
+        "dateStart": "2024.01",
+        "dateEnd": null,
+        "ongoing": false,
         "name": "Personal website",
         "shortDescription": "Developed a personal website using Angular to showcase projects and professional profile.",
-        "fullDescription": "This personal website utilizes Angular 17, Tailwind CSS, and Vercel to deliver a comprehensive project portfolio. \nThrough this project, I advanced my front-end development capabilities and deepened my understanding of contemporary web development practices.",
+        "fullDescription": "This personal website utilizes Angular, Tailwind CSS, and Vercel to deliver a comprehensive project portfolio. \nThrough this project, I advanced my front-end development capabilities and deepened my understanding of contemporary web development practices.",
         "link": "https://gitlab.com/oualid20/OualidWebsite#",
         "linkName": "Gitlab Repository (Open Source)",
         "company": null,
-        "customer": null
+        "customer": null,
+        "tech": ["Angular", "Tailwind CSS", "TypeScript", "Vercel"]
     },
     {
         "type": "CustomerProject",
-        "year": "2025/06 - Ongoing",
-        "name": "Second Customer Project",
-        "shortDescription": "Project focused on frontend development.",
-        "fullDescription": null,
+        "dateStart": "2025.06",
+        "dateEnd": null,
+        "ongoing": true,
+        "name": "Customer Project – Finance",
+        "shortDescription": "Full-stack role on a finance project, frontend and backend alike, modernizing legacy applications into a unified web platform.",
+        "fullDescription": "The project modernizes an outdated software landscape in the finance sector by moving to a web-based architecture. Several specialist applications were consolidated into a shared monorepo and rebuilt as a modern, user-friendly web interface for structured data entry.\n\nI work on the frontend and backend alike, delivering features across the whole stack:\n• Delivered features end to end from backend to frontend\n• Defined and connected interfaces with OpenAPI\n• Built data models and persistence with MongoDB\n• Developed backend logic in Java and Spring\n• Built the Angular frontend for structured data entry\n• Improved the UI and usability with UX design\n• Implemented import and export functionality\n• Tested the frontend and its interfaces, wrote unit tests\n• Documented functional and technical changes",
         "link": null,
         "linkName": null,
         "company": "Randstad Digital",
-        "customer": null
+        "customer": null,
+        "tech": ["Angular", "Angular Material", "Spring", "Java", "MongoDB", "OpenAPI", "TypeScript", "Tailwind CSS", "GitHub", "GitHub Actions"]
     }
 ]

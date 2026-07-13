@@ -1,6 +1,8 @@
 {
     "job": "Software developer",
     "hiMsg": "Hi, I'm Oualid",
-    "description": "I am a dedicated software developer specializing in backend and frontend development. I also have a basic knowledge of AWS. It is my ambition to develop robust and powerful software solutions.",
+    "contactCta": "Get in touch",
+    "copied": "Address copied",
+    "description": "Software development is my passion. As an experienced Java and Angular developer, I build robust, performant, and intuitive software solutions. Alongside a solid foundation in AWS, I am a solution-oriented team player who prioritizes quality and reliability.\n\nIn customer projects I have proven my expertise and continuously developed my skills. With passion and know-how, I gladly take on new challenges.",
     "send": "Send"
 }

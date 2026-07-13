@@ -3,6 +3,7 @@ import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
+    localStorage.clear();
     await TestBed.configureTestingModule({
       imports: [AppComponent],
     }).compileComponents();
@@ -14,16 +15,14 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'oualid-o-website' title`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('oualid-o-website');
-  });
-
-  it('should render title', () => {
+  it('composes the main sections', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, oualid-o-website');
+    const el: HTMLElement = fixture.nativeElement;
+    expect(el.querySelector('app-toolbar')).toBeTruthy();
+    expect(el.querySelector('app-welcome')).toBeTruthy();
+    expect(el.querySelector('app-timeline')).toBeTruthy();
+    expect(el.querySelector('app-technologies')).toBeTruthy();
+    expect(el.querySelector('app-bottom')).toBeTruthy();
   });
 });

@@ -1,57 +1,72 @@
 [
     {
         "type": "Apprenticeship",
-        "year": "2018/09 - 2021/09 [3 JAHRE]",
+        "dateStart": "2018.09",
+        "dateEnd": "2021.09",
+        "ongoing": false,
         "name": "Ausbildung bei Randstad Digital",
-        "shortDescription": "Während meiner 3-jährigen Ausbildung eignete ich mir umfassende Kenntnisse in der Entwicklung von Java-Backends und Angular-Frontends an.",
+        "shortDescription": "Während meiner 3-jährigen Ausbildung in Bayern eignete ich mir umfassende Kenntnisse in der Entwicklung von Java-Backends und Angular-Frontends an.",
         "fullDescription": null,
         "link": "https://www.randstaddigital.de/",
         "linkName": "Randstad Digital Website",
         "company": "Randstad Digital",
-        "customer": null
+        "customer": null,
+        "tech": ["Java", "Angular"]
     },
     {
         "type": "CustomerProject",
-        "year": "2021/09 - 2025/01 [3 JAHRE]",
-        "name": "Erstes Kundenprojekt",
-        "shortDescription": "Im Rahmen meiner 3-jährigen Tätigkeit am Kundenprojekt lag mein Fokus auf der Backend-Entwicklung. Darüber hinaus konnte ich wertvolle Erfahrungen im Frontend- und AWS-Bereich sammeln.",
-        "fullDescription": null,
+        "dateStart": "2021.09",
+        "dateEnd": "2025.01",
+        "ongoing": false,
+        "name": "Kundenprojekt – Automotive",
+        "shortDescription": "Über drei Jahre in einem großen Automotive-Projekt mit Schwerpunkt Backend-Entwicklung – von On-Premise-Betrieb über die Migration in die AWS-Cloud bis zum Betrieb in AWS, ergänzt um Frontend-Aufgaben.",
+        "fullDescription": "Das System berechnet auf Basis spezifischer Parameter präzise CO2- und Emissionswerte für Fahrzeuge. Ein zentraler Datenservice stellt diese Ergebnisse einheitlich für weitere Systeme bereit, während ein eigenes Monitoring- und Reporting-Modul normgerechte Fahrzeugdokumente erzeugt.\n\nMein Schwerpunkt lag auf der Backend-Entwicklung, ergänzt um Frontend- und Cloud-Aufgaben:\n• Java-Backend-Features entwickelt (Schwerpunkt)\n• Schnittstellen mit OpenAPI definiert und angebunden\n• Daten in einer Oracle-Datenbank modelliert und verarbeitet\n• Angular-Frontend-Aufgaben übernommen\n• Anwendung zunächst on-premise betrieben und weiterentwickelt\n• Migration der Anwendung in die AWS-Cloud begleitet\n• Features in AWS bereitgestellt und mit dem Operating-Team betrieben\n• Eigene Monitoring-Dashboards entwickelt (CloudWatch)\n• Bugs analysiert und behoben zur Verbesserung der Systemstabilität\n• 2nd- und 3rd-Level-Support für komplexe Problemstellungen geleistet",
         "link": null,
         "linkName": null,
         "company": "Randstad Digital",
-        "customer": null
+        "customer": null,
+        "tech": ["Java 17", "Java EE", "Gradle", "Angular", "OpenAPI", "AWS", "AWS CloudWatch", "Docker", "Oracle SQL", "Log4j", "GitLab"]
     },
     {
         "type": "Certificate",
-        "year": "2023/06",
+        "dateStart": "2023.06",
+        "dateEnd": null,
+        "ongoing": false,
         "name": "AWS Zertifikat: Cloud Practitioner",
         "shortDescription": "Der Erwerb des Zertifikats AWS Certified Cloud Practitioner belegt meine fundierten Kenntnisse der AWS-Dienste.",
         "fullDescription": null,
         "link": "https://www.credly.com/badges/138a2fcf-2adb-4ecd-8cca-d7a5e91c91d5",
         "linkName": "AWS Zertifikat Nachweis",
         "company": null,
-        "customer": null
+        "customer": null,
+        "tech": ["AWS", "Amazon EC2", "Amazon S3", "IAM", "Amazon RDS", "AWS CloudWatch"]
     },
     {
         "type": "SideProject",
-        "year": "2024/01",
+        "dateStart": "2024.01",
+        "dateEnd": null,
+        "ongoing": false,
         "name": "Persönliche Webseite",
         "shortDescription": "Mittels Angular entwickelte ich meine persönliche Website, um meine Projekte und mein berufliches Profil ansprechend zu präsentieren.",
-        "fullDescription": "Diese persönliche Website nutzt Angular 17, Tailwind CSS und Vercel, um ein umfassendes Projektportfolio zu erstellen.\n\nDurch dieses Projekt habe ich meine Fähigkeiten in der Front-End-Entwicklung erweitert und mein Verständnis für moderne Webentwicklungsverfahren vertieft.",
+        "fullDescription": "Diese persönliche Website nutzt Angular, Tailwind CSS und Vercel, um ein umfassendes Projektportfolio zu erstellen.\n\nDurch dieses Projekt habe ich meine Fähigkeiten in der Front-End-Entwicklung erweitert und mein Verständnis für moderne Webentwicklungsverfahren vertieft.",
         "link": "https://gitlab.com/oualid20/OualidWebsite#",
         "linkName": "Gitlab Repository (Open Source)",
         "company": null,
-        "customer": null
+        "customer": null,
+        "tech": ["Angular", "Tailwind CSS", "TypeScript", "Vercel"]
     },
     {
         "type": "CustomerProject",
-        "year": "2025/06 - Fortlaufend",
-        "name": "Zweites Kundenprojekt",
-        "shortDescription": "Kundenprojekt mit Fokus auf Frontend-Entwicklung.",
-        "fullDescription": null,
+        "dateStart": "2025.06",
+        "dateEnd": null,
+        "ongoing": true,
+        "name": "Kundenprojekt – Finanz",
+        "shortDescription": "Kundenprojekt im Finanzumfeld, Frontend und Backend gleichermaßen: Modernisierung veralteter Anwendungen zu einer einheitlichen Webplattform.",
+        "fullDescription": "Das Projekt modernisiert eine veraltete Softwarelandschaft im Finanzumfeld durch den Umstieg auf eine webbasierte Architektur. Mehrere Fachanwendungen wurden in einem gemeinsamen Monorepo zusammengeführt und als moderne, benutzerfreundliche Web-Oberfläche für die strukturierte Dateneingabe neu aufgebaut.\n\nIch arbeite gleichermaßen im Frontend und Backend und setze Features über den gesamten Stack um:\n• Features durchgängig vom Backend bis ins Frontend umgesetzt\n• Schnittstellen mit OpenAPI definiert und angebunden\n• Datenmodelle und Persistenz mit MongoDB umgesetzt\n• Backend-Logik in Java und Spring entwickelt\n• Angular-Frontend für die strukturierte Dateneingabe gebaut\n• Benutzeroberfläche und Bedienbarkeit mit dem UX-Design verbessert\n• Import- und Export-Funktionen implementiert\n• Frontend und Schnittstellen getestet, Unit-Tests aufgebaut\n• Funktionale und technische Neuerungen dokumentiert",
         "link": null,
         "linkName": null,
         "company": "Randstad Digital",
-        "customer": null
+        "customer": null,
+        "tech": ["Angular", "Angular Material", "Spring", "Java", "MongoDB", "OpenAPI", "TypeScript", "Tailwind CSS", "GitHub", "GitHub Actions"]
     }
 ]
