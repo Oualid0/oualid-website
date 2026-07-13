@@ -11,7 +11,7 @@ describe('ImprintComponent', () => {
       imports: [ImprintComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(ImprintComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -19,5 +19,12 @@ describe('ImprintComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('renders the imprint heading and address', () => {
+    const text = fixture.nativeElement.textContent;
+    expect(fixture.nativeElement.querySelector('h1')?.textContent).toContain('Impressum');
+    expect(text).toContain('Oualid O.');
+    expect(text).toContain('Hamburg');
   });
 });

@@ -1,50 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 
 import timelineItemsEn from '../../../assets/strings/en/timeline-items.json';
 import timelineItemsDe from '../../../assets/strings/de/timeline-items.json';
 
 import textEn from '../../../assets/strings/en/timeline.json';
 import textDe from '../../../assets/strings/de/timeline.json';
-import { TextDataInterface } from '../../models/interface/text-data-interface';
-import { SettingsService } from '../../service/settings.service';
-import { TimelineObject } from '../../models/object/timeline-object';
+import { SettingsStore } from '../../service/settings.store';
+import { localizedText } from '../../service/localized-text';
 import { TimelineItemComponent } from '../../components/timeline-item/timeline-item.component';
+import { SectionTitleComponent } from '../../components/section-title/section-title.component';
 import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'app-timeline',
-    imports: [CommonModule, TimelineItemComponent],
+    imports: [CommonModule, TimelineItemComponent, SectionTitleComponent],
     templateUrl: './timeline.component.html',
 })
-export class TimelineComponent implements OnInit {
-  timelineItems: TimelineObject[] = [];
-  text: TextDataInterface = {};
+export class TimelineComponent {
+  private settingsStore = inject(SettingsStore);
 
-  constructor(private settingsService: SettingsService) { }
-
-  ngOnInit(): void {
-    this.settingsService.getLanguage().subscribe({
-      next: value => {
-        this.timelineItems = [];
-
-        if (value == "EN") {
-          this.text = textEn;
-
-          timelineItemsEn.forEach(
-            value => this.timelineItems.push(value)
-          );
-        } else {
-          this.text = textDe;
-
-          timelineItemsDe.forEach(
-            value => this.timelineItems.push(value)
-          );
-        }
-
-        this.timelineItems.reverse();
-      }
-    });
-  }
-
-
+  text = localizedText(this.settingsStore.language, textEn, textDe);
+  title = computed(() => this.text()['title'] as string);
+  timelineItems = computed(() => {
+    const items = this.settingsStore.language() === 'EN' ? [...timelineItemsEn] : [...timelineItemsDe];
+    return items.reverse();
+  });
 }

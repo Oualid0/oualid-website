@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { SettingsService } from '../../service/settings.service';
+import { Component, inject } from '@angular/core';
+import { SettingsStore } from '../../service/settings.store';
+import { localizedText } from '../../service/localized-text';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { EmailService } from '../../service/email.service';
-import { TextDataInterface } from '../../models/interface/text-data-interface';
 
 import textEn from '../../../assets/strings/en/contact.json';
 import textDe from '../../../assets/strings/de/contact.json';
@@ -12,26 +12,17 @@ import textDe from '../../../assets/strings/de/contact.json';
     imports: [FormsModule, ReactiveFormsModule],
     templateUrl: './contact.component.html',
 })
-export class ContactComponent implements OnInit {
-  contactForm: FormGroup;
-  text: TextDataInterface = {};
+export class ContactComponent {
+  private settingsStore = inject(SettingsStore);
+  private fb = inject(FormBuilder);
+  private emailService = inject(EmailService);
 
-  constructor(private settingsService: SettingsService, private fb: FormBuilder, private emailService: EmailService) {
-    this.contactForm = this.fb.group({
-      name: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      message: ['', Validators.required]
-    });
-  }
-
-  ngOnInit(): void {
-    this.settingsService.getLanguage().subscribe({
-      next: value => {
-        this.text = (value == "EN" ? textEn : textDe);
-      }
-    });
-  }
-
+  contactForm: FormGroup = this.fb.group({
+    name: ['', Validators.required],
+    email: ['', [Validators.required, Validators.email]],
+    message: ['', Validators.required]
+  });
+  text = localizedText(this.settingsStore.language, textEn, textDe);
 
   onSubmit() {
     if (this.contactForm.valid) {

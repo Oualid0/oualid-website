@@ -1,25 +1,47 @@
 <div class="welcome-animation" id="wellcome">
-    <div class="flex">
-        <div class="relative mr-8 min-w-28 max-w-28 select-none ml-2">
-            <img src="../../../assets/pics/pic-r.png" class="rounded-full absolute min-w-40 -top-6 -left-6 rotate"
-                alt="Oualid-BG">
-            <img src="../../../assets/pics/profile-pic5.png" class="rounded-full relative z-10" alt="Oualid">
-        </div>
+    <div class="flex items-center gap-6">
+        <img src="../../../assets/pics/profile-pic5.webp"
+            class="rounded-full w-28 h-28 min-w-28 flex-shrink-0 select-none object-cover" alt="Oualid">
         <div>
-            <h3 class="text-cyan-500 sm:text-xl text-lg font-semibold font-cons">{{text['job']}}</h3>
-            <h1 class="dark:text-white sm:text-4xl text-2xl font-bold">{{text['hiMsg']}}</h1>
+            <h3 class="text-primary sm:text-sm text-xs font-semibold font-cons uppercase tracking-wide" style="text-shadow: 0 0 12px var(--primary-glow);">{{text()['job']}}</h3>
+            <h1 class="text-on-surface sm:text-4xl text-2xl font-bold mt-1">{{text()['hiMsg']}}</h1>
 
-            <div class="flex items-center mt-2">
-                <a target="_blank" href="https://gitlab.com/oualid20" class="mr-3 text-cyan-200 dark:text-cyan-800 hover:text-cyan-400 dark:hover:text-cyan-600" title="GitLab">
-                    <i class="fab fa-gitlab fa-2x" aria-hidden="true"></i>
+            <div class="flex flex-wrap items-center gap-4 mt-4">
+                <a [href]="mailUrl" target="_blank" rel="noopener noreferrer" (click)="openContact($event)"
+                    class="glow-hover inline-flex items-center gap-2 h-9 px-4 rounded-full bg-primary/10 border border-primary/50 text-primary font-cons text-xs tracking-wide active:scale-95 hover:bg-primary/20 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                    style="text-shadow: 0 0 12px var(--primary-glow);">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.7"
+                        stroke="currentColor" class="w-4 h-4" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75l9.75 6 9.75-6M3.75 5.25h16.5A1.5 1.5 0 0 1 21.75 6.75v10.5a1.5 1.5 0 0 1-1.5 1.5H3.75a1.5 1.5 0 0 1-1.5-1.5V6.75a1.5 1.5 0 0 1 1.5-1.5z" />
+                    </svg>
+                    {{text()['contactCta']}}
                 </a>
-                <a target="_blank" href="https://www.linkedin.com/in/oualid-o-43386b1a3/" class=" text-cyan-200 dark:text-cyan-800 hover:text-cyan-400 dark:hover:text-cyan-600" title="LinkedIn">
-                    <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
-                </a>
+                <div class="flex items-center gap-3">
+                    <a target="_blank" href="https://gitlab.com/oualid20"
+                        class="text-on-surface-variant hover:text-primary transition-colors rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                        title="GitLab" aria-label="GitLab">
+                        <i class="fab fa-gitlab fa-lg" aria-hidden="true"></i>
+                    </a>
+                    <a target="_blank" href="https://www.linkedin.com/in/oualid-o-43386b1a3/"
+                        class="text-on-surface-variant hover:text-primary transition-colors rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                        title="LinkedIn" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
-    <p class="dark:text-white mt-6 p-3 bg-gray-200 dark:bg-gray-900 rounded-md whitespace-pre-line">{{text['description']}}</p>
-    <br>
-
+    <p class="text-on-surface mt-6 whitespace-pre-line leading-relaxed [text-shadow:0_1px_2px_rgba(0,0,0,0.4)]">{{text()['description']}}</p>
 </div>
+
+<!-- CLIPBOARD TOAST -->
+@if (copied()) {
+    <div class="toast-in fixed bottom-6 left-1/2 -translate-x-1/2 z-50 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface-container-high border border-primary/50 text-primary font-cons text-xs tracking-wide"
+        style="text-shadow: 0 0 12px var(--primary-glow); box-shadow: 0 0 18px var(--primary-glow);" role="status">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+            stroke="currentColor" class="w-4 h-4" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+        </svg>
+        <span>{{text()['copied']}}</span>
+    </div>
+}

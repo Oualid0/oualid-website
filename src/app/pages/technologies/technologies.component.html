@@ -1,12 +1,10 @@
-<h2 class="dark:text-white  text-2xl sm:text-3xl font-bold mb-5 font-cons">{{text['title']}}</h2>
+<app-section-title [label]="title()"></app-section-title>
 
-<!-- TECHNOLOGIES -->
-<ul class="w-fit space-y-1list-disc list-inside dark:text-white bg-gray-200 dark:bg-gray-900 p-3 rounded-md">
-    <div *ngFor="let item of technologies">
-        <li>
-            {{item}}
-        </li>
+<div class="flex flex-wrap gap-2.5">
+    <div *ngFor="let item of technologies()"
+        class="glow-hover flex items-center gap-2 rounded-md border border-outline-variant bg-surface-container-high px-3 py-2">
+        <span class="w-1.5 h-1.5 rounded-full bg-primary" style="box-shadow: 0 0 8px var(--primary-glow);" aria-hidden="true"></span>
+        <span class="font-cons text-xs text-on-surface">{{item.name}}</span>
+        <span class="font-cons text-[10px] text-on-surface-variant">{{item.level}}</span>
     </div>
-</ul>
-
-<br>
+</div>

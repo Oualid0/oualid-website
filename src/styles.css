@@ -1,0 +1,227 @@
+@import "tailwindcss";
+
+/* Preserve the v3 class-based dark mode used by SettingsStore, which toggles
+   the `dark` class on <body>. Without this, v4 defaults dark: to prefers-color-scheme. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* DESIGN TOKENS — "Quiet Terminal" (see _bmad-output/.../DESIGN.md) */
+:root {
+  --background: #f7f7fb;
+  --surface-container-lowest: #eceef5;
+  --surface-container-low: #eceef5;
+  --surface-container: #eceef5;
+  --surface-container-high: #e2e5f0;
+  --surface-container-highest: #d5d9e8;
+  --on-surface: #12141c;
+  --on-surface-variant: #4d5568;
+  --outline: #c7cddc;
+  --outline-variant: #c7cddc;
+  --primary: #0891b2;
+  --on-primary: #ffffff;
+  --primary-container: #c2ebf2;
+  --on-primary-container: #0b4a5a;
+  --primary-glow: rgba(8, 145, 178, 0.2);
+  --secondary: #4d5568;
+  --tertiary: #5b45c9;
+  --tertiary-container: #ddd6fb;
+  --on-tertiary-container: #3d2a8e;
+  --error: #c94f5b;
+  --on-error-container: #7a2029;
+  --error-container: #f7dde0;
+}
+
+.dark {
+  --background: #0b0e14;
+  --surface-container-lowest: #05060a;
+  --surface-container-low: #11151d;
+  --surface-container: #161b26;
+  --surface-container-high: #1c2230;
+  --surface-container-highest: #232a3a;
+  --on-surface: #e6e9f0;
+  --on-surface-variant: #a4acc0;
+  --outline: #3a4256;
+  --outline-variant: #242b3a;
+  --primary: #22d3ee;
+  --on-primary: #042028;
+  --primary-container: #0e4657;
+  --on-primary-container: #a5ecf7;
+  --primary-glow: rgba(34, 211, 238, 0.35);
+  --secondary: #6d7690;
+  --tertiary: #8b7bf0;
+  --tertiary-container: #332a5e;
+  --on-tertiary-container: #d9d2fb;
+  --error: #e5707a;
+  --on-error-container: #ffd9dc;
+  --error-container: #3d1319;
+}
+
+@theme {
+  --radius-sm: 0.3rem;
+  --radius-md: 0.625rem;
+  --radius-lg: 0.875rem;
+  --radius-xl: 1.25rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface-container-lowest: var(--surface-container-lowest);
+  --color-surface-container-low: var(--surface-container-low);
+  --color-surface-container: var(--surface-container);
+  --color-surface-container-high: var(--surface-container-high);
+  --color-surface-container-highest: var(--surface-container-highest);
+  --color-on-surface: var(--on-surface);
+  --color-on-surface-variant: var(--on-surface-variant);
+  --color-outline: var(--outline);
+  --color-outline-variant: var(--outline-variant);
+  --color-primary: var(--primary);
+  --color-on-primary: var(--on-primary);
+  --color-primary-container: var(--primary-container);
+  --color-on-primary-container: var(--on-primary-container);
+  --color-secondary: var(--secondary);
+  --color-tertiary: var(--tertiary);
+  --color-tertiary-container: var(--tertiary-container);
+  --color-on-tertiary-container: var(--on-tertiary-container);
+  --color-error: var(--error);
+  --color-on-error-container: var(--on-error-container);
+  --color-error-container: var(--error-container);
+}
+
+/* HTML */
+html {
+  scroll-behavior: smooth;
+  font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Scale the whole rem-based UI up on very large / 4K viewports so content
+   width, spacing, and type grow together instead of just sitting small in
+   the middle of the screen. */
+@media (min-width: 1920px) {
+  html {
+    font-size: 19px;
+  }
+}
+
+@media (min-width: 2560px) {
+  html {
+    font-size: 22px;
+  }
+}
+
+body {
+  background-color: var(--background);
+  color: var(--on-surface);
+}
+
+.font-cons {
+  font-family: Consolas, monaco, monospace;
+}
+
+/* LINE BREAKS */
+.line-breaks {
+  white-space: pre-line;
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+  width: .5em;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(117, 117, 117, 0.5);
+  border-radius: 1em;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(68, 68, 68, 0.575);
+}
+
+
+/* ANIMATION */
+.welcome-animation {
+  animation: 0.6s ease-out 0s 1 slideInFromLeft;
+}
+
+.app-project-animation {
+  animation: 0.8s ease-out 0s 1 slideInFromBottom;
+}
+
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-8%);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(2%);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* DECO — page backdrop: faint dot-grid + soft primary aura top-left */
+.page-backdrop {
+  background-image:
+    radial-gradient(circle at 18% 8%, var(--primary-glow), transparent 42%),
+    radial-gradient(color-mix(in srgb, var(--on-surface) 4%, transparent) 1px, transparent 1px);
+  background-size: auto, 22px 22px;
+  background-position: 0 0, 0 0;
+}
+
+/* DECO — section title: blinking cursor keyframe (referenced via Tailwind's
+   arbitrary animate-[blink_...] utility in section-title.component.html) */
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Glow accent on interactive/hover/active elements */
+.glow-hover {
+  transition: box-shadow 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.glow-hover:hover,
+.glow-hover.active {
+  box-shadow: 0 0 0 1px var(--primary-glow), 0 0 16px var(--primary-glow);
+  border-color: var(--primary) !important;
+  color: var(--primary) !important;
+}
+
+/* Clipboard toast: fade + slide up */
+.toast-in {
+  animation: 0.2s ease-out 0s 1 toastIn;
+}
+
+@keyframes toastIn {
+  0% {
+    transform: translate(-50%, 0.75rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .welcome-animation,
+  .app-project-animation,
+  .toast-in {
+    animation: none !important;
+  }
+}

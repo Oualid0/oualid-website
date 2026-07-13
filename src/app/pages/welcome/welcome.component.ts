@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { SettingsService } from '../../service/settings.service';
-import { TextDataInterface } from '../../models/interface/text-data-interface';
+import { Component, inject, signal } from '@angular/core';
+import { SettingsStore } from '../../service/settings.store';
+import { localizedText } from '../../service/localized-text';
 
 import textEn from '../../../assets/strings/en/welcome.json';
 import textDe from '../../../assets/strings/de/welcome.json';
@@ -10,17 +10,29 @@ import textDe from '../../../assets/strings/de/welcome.json';
     imports: [],
     templateUrl: './welcome.component.html',
 })
-export class WelcomeComponent implements OnInit {
-  text: TextDataInterface = {};
+export class WelcomeComponent {
+  private settingsStore = inject(SettingsStore);
 
-  constructor(private settingsService: SettingsService) { }
+  text = localizedText(this.settingsStore.language, textEn, textDe);
 
-  ngOnInit(): void {
-    this.settingsService.getLanguage().subscribe({
-      next: value => {
-        this.text = (value == "EN" ? textEn : textDe);
-      }
-    });
+  readonly email = 'laboumyt@gmail.com';
+  readonly mailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${this.email}`;
+  readonly copied = signal(false);
+
+  /** Copy the address + show the toast first, then open Gmail after a short beat
+   *  so the user actually notices it landed in the clipboard. */
+  openContact(event: MouseEvent): void {
+    event.preventDefault();
+    this.copyEmail();
+    setTimeout(() => window.open(this.mailUrl, '_blank', 'noopener'), 1200);
   }
 
+  copyEmail(): void {
+    navigator.clipboard?.writeText(this.email)
+      .then(() => {
+        this.copied.set(true);
+        setTimeout(() => this.copied.set(false), 2000);
+      })
+      .catch(() => { /* clipboard unavailable — the Gmail tab still opens */ });
+  }
 }
