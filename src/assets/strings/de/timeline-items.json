@@ -18,7 +18,7 @@
         "dateEnd": "2025.01",
         "ongoing": false,
         "name": "Kundenprojekt – Automotive",
-        "description": "Großes Automotive-Projekt (3+ Jahre), Fokus Backend – von On-Premise über die AWS-Migration bis zum Cloud-Betrieb. Das System berechnet CO2- und Emissionswerte für Fahrzeuge und erzeugt normgerechte Dokumente.\n\n• Java-Backend-Features entwickelt\n• OpenAPI-Schnittstellen definiert und angebunden\n• Daten in Oracle modelliert und verarbeitet\n• Angular-Frontend-Aufgaben übernommen\n• Migration in die AWS-Cloud begleitet\n• Features in AWS bereitgestellt und betrieben\n• Monitoring-Dashboards mit CloudWatch aufgebaut\n• Bugs analysiert und behoben\n• 2nd- und 3rd-Level-Support geleistet",
+        "description": "Großes Automotive-Projekt (3+ Jahre), Fokus Backend – von On-Premise über die AWS-Migration bis zum Cloud-Betrieb. Das System berechnet CO2- und Emissionswerte für Fahrzeuge und erzeugt normgerechte Dokumente.\n\n• Java-Backend-Features entwickelt\n• OpenAPI-Schnittstellen definiert und angebunden\n• Daten in Oracle modelliert und verarbeitet\n• Angular-Frontend-Aufgaben übernommen\n• Migration in die AWS-Cloud begleitet\n• Features in AWS bereitgestellt und betrieben\n• Monitoring-Dashboards mit CloudWatch aufgebaut\n• Bugs analysiert und behoben",
         "link": null,
         "linkName": null,
         "company": "Randstad Digital",
