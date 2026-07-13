@@ -6,8 +6,7 @@ export interface TimelineObject {
     dateEnd: string | null;
     ongoing: boolean;
     name: string;
-    shortDescription: string | null;
-    fullDescription: string | null;
+    description: string | null;
     link: string | null;
     linkName: string | null;
     company: string | null;
