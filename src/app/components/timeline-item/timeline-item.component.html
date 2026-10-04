@@ -12,19 +12,24 @@
             <!-- TITLE -->
             <h3 class="text-base font-semibold text-on-surface">{{data.name}}</h3>
 
-            <!-- TAG -->
-            <span class="block font-cons text-xs tracking-wide text-on-surface-variant mt-1">#{{tagLabel()}}</span>
+            <!-- META: TAG + DATE -->
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 mt-3">
+                <!-- Letter-spacing also trails the last glyph, so the right padding is reduced by the same amount to keep the label centered. -->
+                <span class="inline-flex items-center gap-1.5 h-5 rounded-full border pl-2 pr-[calc(0.5rem-0.05em)] font-cons text-[10px] leading-none uppercase tracking-wider"
+                    [ngClass]="isCustomerProject() ? 'border-primary/50 bg-primary/10 text-primary font-semibold' : 'border-outline-variant text-on-surface-variant'">
+                    <span *ngIf="isCustomerProject()" class="w-1.5 h-1.5 rounded-full bg-primary" aria-hidden="true"></span>
+                    {{tagLabel()}}
+                </span>
 
-            <!-- DATE -->
-            <p class="font-cons text-xs text-on-surface-variant mt-1 tracking-wide">
-                <ng-container *ngIf="data.ongoing; else notOngoing">
-                    {{data.dateStart}} <span class="text-primary">— {{text()['ongoingLabel']}}</span>
-                </ng-container>
-                <ng-template #notOngoing>
-                    <ng-container *ngIf="data.dateEnd; else singleDate">{{data.dateStart}} — {{data.dateEnd}}</ng-container>
-                    <ng-template #singleDate>{{data.dateStart}}</ng-template>
-                </ng-template>
-            </p>
+                <span class="font-cons text-xs leading-none text-on-surface-variant">
+                    <ng-container *ngIf="data.ongoing; else notOngoing">{{data.dateStart}} — {{text()['ongoingLabel']}}</ng-container>
+                    <ng-template #notOngoing>
+                        <ng-container *ngIf="data.dateEnd; else singleDate">{{data.dateStart}} — {{data.dateEnd}}</ng-container>
+                        <ng-template #singleDate>{{data.dateStart}}</ng-template>
+                    </ng-template>
+                    <ng-container *ngIf="duration()"> · {{duration()}}</ng-container>
+                </span>
+            </div>
 
             <!-- DESCRIPTION -->
             <p *ngIf="data.description" class="text-sm text-on-surface leading-relaxed mt-4 line-breaks">

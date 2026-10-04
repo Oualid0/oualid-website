@@ -17,16 +17,18 @@
                     {{text()['contactCta']}}
                 </a>
                 <div class="flex items-center gap-3">
-                    <a target="_blank" href="https://gitlab.com/oualid20"
+                    <a target="_blank" href="https://github.com/Oualid0"
                         class="text-on-surface-variant hover:text-primary transition-colors rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-                        title="GitLab" aria-label="GitLab">
-                        <i class="fab fa-gitlab fa-lg" aria-hidden="true"></i>
+                        title="GitHub" aria-label="GitHub">
+                        <i class="fab fa-github fa-lg" aria-hidden="true"></i>
                     </a>
-                    <a target="_blank" href="https://www.linkedin.com/in/oualid-o-43386b1a3/"
-                        class="text-on-surface-variant hover:text-primary transition-colors rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-                        title="LinkedIn" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
-                    </a>
+                    @if (showLinkedIn) {
+                        <a target="_blank" href="https://www.linkedin.com/in/oualid-o-43386b1a3/"
+                            class="text-on-surface-variant hover:text-primary transition-colors rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                            title="LinkedIn" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+                        </a>
+                    }
                 </div>
             </div>
         </div>

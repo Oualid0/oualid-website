@@ -5,7 +5,7 @@
         "dateEnd": "2021.09",
         "ongoing": false,
         "name": "Ausbildung bei Randstad Digital",
-        "description": "3-jährige Ausbildung in Bayern mit Fokus auf Java-Backends und Angular-Frontends.",
+        "description": "Drei Jahre Ausbildung in Bayern. Dort habe ich gelernt, Backends mit Java und Frontends mit Angular zu bauen.",
         "link": "https://www.randstaddigital.de/",
         "linkName": "Randstad Digital Website",
         "company": "Randstad Digital",
@@ -17,8 +17,8 @@
         "dateStart": "2021.09",
         "dateEnd": "2025.01",
         "ongoing": false,
-        "name": "Kundenprojekt – Automotive",
-        "description": "Großes Automotive-Projekt (3+ Jahre), Fokus Backend – von On-Premise über die AWS-Migration bis zum Cloud-Betrieb. Das System berechnet CO2- und Emissionswerte für Fahrzeuge und erzeugt normgerechte Dokumente.\n\n• Java-Backend-Features entwickelt\n• OpenAPI-Schnittstellen definiert und angebunden\n• Daten in Oracle modelliert und verarbeitet\n• Angular-Frontend-Aufgaben übernommen\n• Migration in die AWS-Cloud begleitet\n• Features in AWS bereitgestellt und betrieben\n• Monitoring-Dashboards mit CloudWatch aufgebaut\n• Bugs analysiert und behoben",
+        "name": "Kundenprojekt: Automotive",
+        "description": "Ein großes Automotive-Projekt über mehr als drei Jahre, vor allem im Backend. Ich war dabei, als das System von On-Premise in die AWS-Cloud umgezogen ist, und habe es danach in der Cloud mit betrieben. Die Anwendung berechnet CO2- und Emissionswerte für Fahrzeuge und erstellt daraus normgerechte Dokumente.\n\n• Features im Java-Backend entwickelt\n• OpenAPI-Schnittstellen entworfen und angebunden\n• Daten in Oracle modelliert\n• Auch Aufgaben im Angular-Frontend übernommen\n• Die Migration nach AWS begleitet\n• Features in AWS ausgerollt und betrieben\n• Monitoring-Dashboards mit CloudWatch gebaut\n• Bugs gesucht und behoben",
         "link": null,
         "linkName": null,
         "company": "Randstad Digital",
@@ -31,9 +31,9 @@
         "dateEnd": null,
         "ongoing": false,
         "name": "AWS Zertifikat: Cloud Practitioner",
-        "description": "AWS Certified Cloud Practitioner – belegt fundierte Kenntnisse der AWS-Dienste.",
+        "description": "Mit dem AWS Certified Cloud Practitioner habe ich mein Grundlagenwissen zu den AWS-Diensten belegt.",
         "link": "https://www.credly.com/badges/138a2fcf-2adb-4ecd-8cca-d7a5e91c91d5",
-        "linkName": "AWS Zertifikat Nachweis",
+        "linkName": "Nachweis zum AWS-Zertifikat",
         "company": null,
         "customer": null,
         "tech": ["AWS", "Amazon EC2", "Amazon S3", "IAM", "Amazon RDS", "AWS CloudWatch"]
@@ -44,24 +44,24 @@
         "dateEnd": null,
         "ongoing": false,
         "name": "Persönliche Webseite",
-        "description": "Mit Angular, Tailwind CSS und Vercel gebautes Portfolio zur Präsentation meiner Projekte – und zur Vertiefung moderner Frontend-Entwicklung.",
-        "link": "https://gitlab.com/oualid20/OualidWebsite#",
-        "linkName": "Gitlab Repository (Open Source)",
+        "description": "Mein Portfolio, gebaut mit Angular und Tailwind CSS. GitHub Actions veröffentlicht es automatisch auf GitHub Pages. Hier zeige ich meine Projekte und probiere neue Frontend-Themen aus.",
+        "link": "https://github.com/Oualid0/oualid-website",
+        "linkName": "GitHub Repository",
         "company": null,
         "customer": null,
-        "tech": ["Angular", "Tailwind CSS", "TypeScript", "Vercel"]
+        "tech": ["Angular", "Tailwind CSS", "TypeScript", "GitHub Actions", "GitHub Pages"]
     },
     {
         "type": "CustomerProject",
         "dateStart": "2025.06",
         "dateEnd": null,
         "ongoing": true,
-        "name": "Kundenprojekt – Finanz",
-        "description": "Full-Stack-Kundenprojekt im Finanzumfeld: Modernisierung veralteter Anwendungen zu einer einheitlichen Webplattform. Mehrere Fachanwendungen werden in einem Monorepo für die strukturierte Dateneingabe zusammengeführt.\n\n• Features durchgängig von Backend bis Frontend umgesetzt\n• Backend-Logik in Java und Spring entwickelt\n• Datenmodelle mit MongoDB umgesetzt\n• OpenAPI-Schnittstellen angebunden\n• Angular-Frontend für die Dateneingabe gebaut\n• Import- und Export-Funktionen implementiert\n• Frontend und Schnittstellen getestet",
+        "name": "Kundenprojekt: Finanzen",
+        "description": "Ein Full-Stack-Projekt im Finanzbereich. Wir führen bestehende Fachanwendungen zu einer gemeinsamen Webplattform zusammen.\n\n• Frontend mit Angular entwickeln\n• Backend mit Java und Spring entwickeln\n• Im Alltag viel Agentic Coding mit GitHub Copilot",
         "link": null,
         "linkName": null,
         "company": "Randstad Digital",
         "customer": null,
-        "tech": ["Angular", "Angular Material", "Spring", "Java", "MongoDB", "OpenAPI", "TypeScript", "Tailwind CSS", "GitHub", "GitHub Actions"]
+        "tech": ["Angular", "Angular Material", "Spring", "Java", "MongoDB", "OpenAPI", "TypeScript", "Tailwind CSS", "GitHub", "GitHub Actions", "GitHub Copilot"]
     }
 ]

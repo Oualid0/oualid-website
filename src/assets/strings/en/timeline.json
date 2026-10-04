@@ -1,15 +1,17 @@
 {
     "title": "Timeline",
-    "company": "Company: ",
-    "customer": "Customer: ",
+    "company": "Company:",
+    "customer": "Customer:",
     "link": "Link",
     "tech": "Technologies:",
     "description": "Description:",
     "ongoingLabel": "ongoing",
-    "sideProject": "SideProject",
-    "customerProject": "CustomerProject",
+    "yearShort": "y",
+    "monthShort": "mo",
+    "sideProject": "Side project",
+    "customerProject": "Customer project",
     "certificate": "Certificate",
     "apprenticeship": "Apprenticeship",
     "confirmation": "Confirmation",
-    "confirmationLink": "Confirmation Link"
+    "confirmationLink": "Confirmation link"
 }

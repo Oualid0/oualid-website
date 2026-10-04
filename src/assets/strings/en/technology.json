@@ -1,16 +1,54 @@
 {
-    "title": "Learned technologies",
-    "tech": [
-        { "name": "Java", "level": "4/5" },
-        { "name": "Angular", "level": "4/5" },
-        { "name": "Claude Code", "level": "4/5" },
-        { "name": "SQL (OracleDB)", "level": "3/5" },
-        { "name": "GIT (GitLab)", "level": "3/5" },
-        { "name": "Python", "level": "3/5" },
-        { "name": "Spring Boot", "level": "3/5" },
-        { "name": "AWS", "level": "2/5" },
-        { "name": "MongoDB", "level": "2/5" },
-        { "name": "Unity", "level": "2/5" },
-        { "name": "Vercel", "level": "1/5" }
+    "title": "Tech stack",
+    "categories": [
+        {
+            "name": "Backend",
+            "tech": [
+                { "name": "Java", "level": "4/5" },
+                { "name": "OpenAPI", "level": "4/5" },
+                { "name": "Spring Boot", "level": "3/5" },
+                { "name": "Python", "level": "3/5" }
+            ]
+        },
+        {
+            "name": "Frontend",
+            "tech": [
+                { "name": "Angular", "level": "4/5" },
+                { "name": "TypeScript", "level": "4/5" },
+                { "name": "Tailwind CSS", "level": "3/5" }
+            ]
+        },
+        {
+            "name": "Databases",
+            "tech": [
+                { "name": "SQL (OracleDB)", "level": "4/5" },
+                { "name": "NoSQL (MongoDB)", "level": "2/5" }
+            ]
+        },
+        {
+            "name": "AI",
+            "tech": [
+                { "name": "Claude Code", "level": "5/5" },
+                { "name": "GitHub Copilot", "level": "4/5" },
+                { "name": "T3Code", "level": "4/5" }
+            ]
+        },
+        {
+            "name": "Cloud",
+            "tech": [
+                { "name": "AWS", "level": "3/5" },
+                { "name": "Google Cloud", "level": "1/5" }
+            ]
+        },
+        {
+            "name": "Other",
+            "tech": [
+                { "name": "Git", "level": "4/5" },
+                { "name": "GitHub", "level": "4/5" },
+                { "name": "GitLab", "level": "3/5" },
+                { "name": "Docker", "level": "3/5" },
+                { "name": "Unity", "level": "2/5" }
+            ]
+        }
     ]
 }

@@ -18,6 +18,8 @@ export class WelcomeComponent {
   readonly email = 'laboumyt@gmail.com';
   readonly mailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${this.email}`;
   readonly copied = signal(false);
+  /** LinkedIn is hidden for now; set to true to show the link again. */
+  readonly showLinkedIn = false;
 
   /** Copy the address + show the toast first, then open Gmail after a short beat
    *  so the user actually notices it landed in the clipboard. */

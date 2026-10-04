@@ -1,8 +1,8 @@
 {
     "title": "Contact",
-    "errorMsg1": "*The contact form is currently under construction. Please visit this page again later.",
+    "errorMsg1": "*The contact form isn't ready yet. Please check back later.",
     "inputName": "Name",
-    "inputEmail": "E-Mail Address",
+    "inputEmail": "Email address",
     "inputMsg": "Message",
     "send": "Send"
 }

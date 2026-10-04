@@ -6,10 +6,12 @@
     "tech": "Technologien:",
     "description": "Beschreibung:",
     "ongoingLabel": "heute",
+    "yearShort": "J",
+    "monthShort": "M",
     "sideProject": "Nebenprojekt",
     "customerProject": "Kundenprojekt",
     "certificate": "Zertifikat",
     "apprenticeship": "Ausbildung",
     "confirmation": "Nachweis",
-    "confirmationLink": "Nachweis Link"
+    "confirmationLink": "Link zum Nachweis"
 }

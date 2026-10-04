@@ -27,17 +27,25 @@ describe('TechnologiesComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('exposes the EN title and tech list', () => {
+  it('exposes the EN title and categories', () => {
     store.setLanguage('EN');
     expect(component.title()).toBe(technologyEn.title);
-    expect(component.technologies()).toEqual(technologyEn.tech);
+    expect(component.categories()).toEqual(technologyEn.categories);
   });
 
-  it('switches title and tech list with the language', () => {
+  it('highlights only the first entry of each category', () => {
     store.setLanguage('EN');
-    expect(component.title()).toBe('Learned technologies');
+    fixture.detectChanges();
+    const highlighted: HTMLElement[] = Array.from(fixture.nativeElement.querySelectorAll('.font-bold'));
+    expect(highlighted.map((el) => el.textContent?.trim()))
+      .toEqual(technologyEn.categories.map((category) => category.tech[0].name));
+  });
+
+  it('switches title and categories with the language', () => {
+    store.setLanguage('EN');
+    expect(component.title()).toBe('Tech stack');
     store.setLanguage('DE');
-    expect(component.title()).toBe('Erlernte Technologien');
-    expect(component.technologies()).toEqual(technologyDe.tech);
+    expect(component.title()).toBe('Tech-Stack');
+    expect(component.categories()).toEqual(technologyDe.categories);
   });
 });

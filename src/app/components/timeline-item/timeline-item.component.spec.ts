@@ -57,10 +57,36 @@ describe('TimelineItemComponent', () => {
 
   it('maps each known type to its localized (EN) tag label', () => {
     store.setLanguage('EN');
-    expect(withData(makeItem({ type: 'CustomerProject' })).tagLabel()).toBe('CustomerProject');
-    expect(withData(makeItem({ type: 'SideProject' })).tagLabel()).toBe('SideProject');
+    expect(withData(makeItem({ type: 'CustomerProject' })).tagLabel()).toBe('Customer project');
+    expect(withData(makeItem({ type: 'SideProject' })).tagLabel()).toBe('Side project');
     expect(withData(makeItem({ type: 'Certificate' })).tagLabel()).toBe('Certificate');
     expect(withData(makeItem({ type: 'Apprenticeship' })).tagLabel()).toBe('Apprenticeship');
+  });
+
+  it('formats the duration as full years with "+" for extra months', () => {
+    store.setLanguage('DE');
+    expect(withData(makeItem({ dateStart: '2018.09', dateEnd: '2021.09' })).duration()).toBe('3J');
+    expect(withData(makeItem({ dateStart: '2021.09', dateEnd: '2025.01' })).duration()).toBe('3J+');
+    store.setLanguage('EN');
+    expect(withData(makeItem({ dateStart: '2021.09', dateEnd: '2025.01' })).duration()).toBe('3y+');
+  });
+
+  it('formats durations under a year in months', () => {
+    store.setLanguage('DE');
+    expect(withData(makeItem({ dateStart: '2020.01', dateEnd: '2020.05' })).duration()).toBe('4M');
+    store.setLanguage('EN');
+    expect(withData(makeItem({ dateStart: '2020.01', dateEnd: '2020.05' })).duration()).toBe('4mo');
+  });
+
+  it('shows no duration for single-date items', () => {
+    expect(withData(makeItem({ dateEnd: null, ongoing: false })).duration()).toBe('');
+  });
+
+  it('counts ongoing items up to the current month', () => {
+    store.setLanguage('DE');
+    const now = new Date();
+    const start = `${now.getFullYear() - 2}.${String(now.getMonth() + 1).padStart(2, '0')}`;
+    expect(withData(makeItem({ dateStart: start, dateEnd: null, ongoing: true })).duration()).toBe('2J');
   });
 
   it('returns an empty tag label for unknown or missing types', () => {
@@ -71,7 +97,7 @@ describe('TimelineItemComponent', () => {
   it('switches the tag label with the language', () => {
     store.setLanguage('EN');
     const component = withData(makeItem({ type: 'CustomerProject' }));
-    expect(component.tagLabel()).toBe('CustomerProject');
+    expect(component.tagLabel()).toBe('Customer project');
     store.setLanguage('DE');
     expect(component.tagLabel()).toBe('Kundenprojekt');
   });

@@ -16,5 +16,5 @@ export class TechnologiesComponent {
 
   private data = computed(() => (this.settingsStore.language() === 'EN' ? textEn : textDe));
   title = computed(() => this.data().title);
-  technologies = computed(() => this.data().tech);
+  categories = computed(() => this.data().categories);
 }

@@ -1,10 +1,18 @@
 <app-section-title [label]="title()"></app-section-title>
 
-<div class="flex flex-wrap gap-2.5">
-    <div *ngFor="let item of technologies()"
-        class="glow-hover flex items-center gap-2 rounded-md border border-outline-variant bg-surface-container-high px-3 py-2">
-        <span class="w-1.5 h-1.5 rounded-full bg-primary" style="box-shadow: 0 0 8px var(--primary-glow);" aria-hidden="true"></span>
-        <span class="font-cons text-xs text-on-surface">{{item.name}}</span>
-        <span class="font-cons text-[10px] text-on-surface-variant">{{item.level}}</span>
+<div class="flex flex-col gap-4">
+    <div *ngFor="let category of categories()" class="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-4">
+        <span class="font-cons text-xs uppercase tracking-widest text-on-surface-variant sm:w-28 sm:shrink-0">{{category.name}}</span>
+        <div class="flex flex-wrap gap-2.5">
+            <!-- The first entry of each category is its top skill and is highlighted. -->
+            <div *ngFor="let item of category.tech; let first = first"
+                class="glow-hover flex items-center gap-2 rounded-md border px-3 py-2"
+                [ngClass]="first ? 'border-primary bg-primary/10' : 'border-outline-variant bg-surface-container-high'"
+                [style.box-shadow]="first ? '0 0 12px var(--primary-glow)' : null">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary" style="box-shadow: 0 0 8px var(--primary-glow);" aria-hidden="true"></span>
+                <span class="font-cons text-xs" [ngClass]="first ? 'font-bold text-primary' : 'text-on-surface'">{{item.name}}</span>
+                <span class="font-cons text-[10px] text-on-surface-variant">{{item.level}}</span>
+            </div>
+        </div>
     </div>
 </div>
