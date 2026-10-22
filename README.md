@@ -35,6 +35,8 @@ npm start         # dev server at http://localhost:4200/
 
 The application reloads automatically when you change any of the source files.
 
+After cloning, run `git config core.hooksPath .githooks` once to enable the pre-commit secret scan (`gitleaks` on staged changes; a missing `gitleaks` only prints a warning).
+
 ## Scripts
 
 | Command          | Description                                                        |
